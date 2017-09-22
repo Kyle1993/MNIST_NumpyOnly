@@ -1,0 +1,52 @@
+Training Log
+---------------------------------------
+epoch 0  , step 0  , train_loss 2.762478  , test_loss 2.549528  
+epoch 0  , step 100, train_loss 2.136917  , test_loss 2.105019  
+epoch 0  , step 200, train_loss 1.184194  , test_loss 1.233296  
+epoch 0  , step 300, train_loss 0.718138  , test_loss 0.759651  
+epoch 0  , step 400, train_loss 0.696574  , test_loss 0.581657  
+epoch 1  , step 0  , train_loss 0.484857  , test_loss 0.516654  
+epoch 1  , step 100, train_loss 0.425560  , test_loss 0.458138  
+epoch 1  , step 200, train_loss 0.345288  , test_loss 0.418362  
+epoch 1  , step 300, train_loss 0.376830  , test_loss 0.392962  
+epoch 1  , step 400, train_loss 0.494886  , test_loss 0.371947  
+epoch 2  , step 0  , train_loss 0.309683  , test_loss 0.363933  
+epoch 2  , step 100, train_loss 0.292350  , test_loss 0.352628  
+epoch 2  , step 200, train_loss 0.265060  , test_loss 0.341511  
+epoch 2  , step 300, train_loss 0.314124  , test_loss 0.331818  
+epoch 2  , step 400, train_loss 0.431744  , test_loss 0.322567  
+epoch 3  , step 0  , train_loss 0.254825  , test_loss 0.319764  
+epoch 3  , step 100, train_loss 0.246348  , test_loss 0.314988  
+epoch 3  , step 200, train_loss 0.231434  , test_loss 0.308821  
+epoch 3  , step 300, train_loss 0.281478  , test_loss 0.302400  
+epoch 3  , step 400, train_loss 0.387421  , test_loss 0.295851  
+epoch 4  , step 0  , train_loss 0.223378  , test_loss 0.295445  
+epoch 4  , step 100, train_loss 0.237451  , test_loss 0.291243  
+epoch 4  , step 200, train_loss 0.212504  , test_loss 0.290314  
+epoch 4  , step 300, train_loss 0.283101  , test_loss 0.289238  
+epoch 4  , step 400, train_loss 0.367088  , test_loss 0.288884  
+epoch 5  , step 0  , train_loss 0.215869  , test_loss 0.288813  
+epoch 5  , step 100, train_loss 0.234261  , test_loss 0.288416  
+epoch 5  , step 200, train_loss 0.211585  , test_loss 0.287955  
+epoch 5  , step 300, train_loss 0.280791  , test_loss 0.287050  
+epoch 5  , step 400, train_loss 0.362229  , test_loss 0.286764  
+epoch 6  , step 0  , train_loss 0.213159  , test_loss 0.286689  
+epoch 6  , step 100, train_loss 0.231795  , test_loss 0.286362  
+epoch 6  , step 200, train_loss 0.210276  , test_loss 0.285933  
+epoch 6  , step 300, train_loss 0.278445  , test_loss 0.285079  
+epoch 6  , step 400, train_loss 0.358057  , test_loss 0.284810  
+epoch 7  , step 0  , train_loss 0.210567  , test_loss 0.284728  
+epoch 7  , step 100, train_loss 0.229585  , test_loss 0.284440  
+epoch 7  , step 200, train_loss 0.208932  , test_loss 0.284020  
+epoch 7  , step 300, train_loss 0.276190  , test_loss 0.283198  
+epoch 7  , step 400, train_loss 0.354158  , test_loss 0.282944  
+epoch 8  , step 0  , train_loss 0.208083  , test_loss 0.282855  
+epoch 8  , step 100, train_loss 0.227514  , test_loss 0.282590  
+epoch 8  , step 200, train_loss 0.207586  , test_loss 0.282175  
+epoch 8  , step 300, train_loss 0.274015  , test_loss 0.281376  
+epoch 8  , step 400, train_loss 0.350421  , test_loss 0.281133  
+epoch 9  , step 0  , train_loss 0.205694  , test_loss 0.281106  
+epoch 9  , step 100, train_loss 0.226977  , test_loss 0.281056  
+epoch 9  , step 200, train_loss 0.206416  , test_loss 0.280957  
+epoch 9  , step 300, train_loss 0.274776  , test_loss 0.280857  
+epoch 9  , step 400, train_loss 0.343950  , test_loss 0.280855  
