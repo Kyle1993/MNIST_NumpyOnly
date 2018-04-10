@@ -31,7 +31,7 @@ __inference_path__: 需要预测图片所在文件夹位置，默认位置为当
 python train.py -epochs <num of epochs> -batch_size <batch_size> -lr <lr>
 ```  
 
-####模型检验
+#### 模型检验
 ```python
 python test.py
 ```  
