@@ -1,4 +1,4 @@
-#使用说明  
+# 使用说明  
 
 没有使用现有的深度学习框架，只使用numpy，对mnist数据集进行预测  
 模型将图片展开成向量，使用了三层全连接，手动计算梯度信息，并反向求导  
@@ -6,7 +6,7 @@
 ### 运行环境
 python3.5  
 
-###包依赖
+### 包依赖
 ```python
 import numpy
 import pickle
@@ -21,12 +21,12 @@ import os,sys
 
 ### 运行方法  
 
-####路进设置
+#### 路进设置
 可以在file_path.py文件中进行路径设置，不设置将使用默认位置
 __mnist_path__: MNIST数据集（4个.gz文件）位置，默认下载至当前目录‘data'文件夹下
 __inference_path__: 需要预测图片所在文件夹位置，默认位置为当前目录‘inferenceData’文件夹下  
 
-####模型训练
+#### 模型训练
 ```python
 python train.py -epochs <num of epochs> -batch_size <batch_size> -lr <lr>
 ```  
@@ -36,7 +36,7 @@ python train.py -epochs <num of epochs> -batch_size <batch_size> -lr <lr>
 python test.py
 ```  
 
-####预测文件
+#### 预测文件
 ```python
 python inference.py
 ```  
