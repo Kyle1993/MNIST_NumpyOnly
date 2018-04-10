@@ -22,8 +22,8 @@ import os,sys
 ### 运行方法  
 
 #### 路进设置
-可以在file_path.py文件中进行路径设置，不设置将使用默认位置
-__mnist_path__: MNIST数据集（4个.gz文件）位置，默认下载至当前目录‘data'文件夹下
+可以在file_path.py文件中进行路径设置，不设置将使用默认位置  
+__mnist_path__: MNIST数据集（4个.gz文件）位置，默认下载至当前目录‘data'文件夹下  
 __inference_path__: 需要预测图片所在文件夹位置，默认位置为当前目录‘inferenceData’文件夹下  
 
 #### 模型训练
@@ -42,11 +42,11 @@ python inference.py
 ```  
 
 ### 文件说明
-/data：MNIST数据集(4个.gz文件)
-/inference：待预测文件
-model.mod：模型参数，读取方法pickle
-training.log：训练日志
-test.log：测试日志
+/data：MNIST数据集(4个.gz文件)  
+/inference：待预测文件  
+model.mod：模型参数，读取方法pickle  
+training.log：训练日志  
+test.log：测试日志  
 Predict_result：预测结果  
 
 ### 运行结果
