@@ -16,7 +16,7 @@ lr = args.lr
 batch_size = args.batch_size
 
 input_size = 28*28
-middle_size = int(input_size/2)
+middle_size = input_size*2
 output_size = 10
 data_process.DownloadProcessData(mnist_path)
 
@@ -50,11 +50,11 @@ def add_diff(grad_backward):
     return grad_backward
 
 
-weight1 = np.random.normal(size=(input_size,middle_size))/input_size    # is*ms
-biase1 = np.random.normal(size=(1,middle_size))    # 1*ms
+weight1 = np.random.normal(size=(input_size,middle_size))/(input_size*middle_size)    # input_size*middle_size
+biase1 = np.random.normal(size=(1,middle_size))    # 1*middle_size
 
-weight2 = np.random.normal(size=(middle_size,output_size))/middle_size  # ms*os
-biase2 = np.random.normal(size=(1,output_size))   # 1*os
+weight2 = np.random.normal(size=(middle_size,output_size))/(middle_size*output_size)  # middle_size*output_size
+biase2 = np.random.normal(size=(1,output_size))   # 1*output_size
 
 f = open(os.path.join(root_path,'training.log'),'w')
 f.write('Training Log\n')
@@ -66,26 +66,26 @@ for epoch in range(epochs):
         lr = lr/10
     train_loader = data_process.DataLoader(os.path.join(mnist_path, 'train_data.npy'), os.path.join(mnist_path, 'train_label.npy'),batch_size)
     for step,(data,label) in enumerate(train_loader):
-        #forward
+        # forward
         biase1_repeat = np.repeat(biase1,batch_size,axis=0)
         biase2_repeat = np.repeat(biase2,batch_size,axis=0)
-        o1 = np.dot(data,weight1)+biase1_repeat
-        o2 = relu(o1)
-        o3 = np.dot(o2,weight2)+biase2_repeat
+        o1 = np.dot(data,weight1)+biase1_repeat  # batch_size*middle_size
+        o2 = relu(o1)                            # batch_size*middle_size
+        o3 = np.dot(o2,weight2)+biase2_repeat    # batch_size*output_size
         loss = CrossEntropyLoss(o3,label)
         # print(np.mean(loss))
 
-        #backward
-        diff_loss_o3 = CEL_backward(o3,label)   #bs*os
-        diff_o3_o2 = np.dot(diff_loss_o3,np.transpose(weight2))   #ms*os
+        # backward
+        diff_loss_o3 = CEL_backward(o3,label)                      # batch_size * output_size
+        diff_loss_o2 = np.dot(diff_loss_o3,np.transpose(weight2))  # batch_size * middle_size
 
-        grad_w2 = np.dot(np.transpose(o2),diff_loss_o3)
-        grad_b2 = add_diff(diff_loss_o3)
+        grad_w2 = np.dot(np.transpose(o2),diff_loss_o3)            # middle_size * output_size
+        grad_b2 = add_diff(diff_loss_o3)                           # batch * output_size
 
-        diff_o2_o1 = relu_diff(o1,diff_o3_o2) #bs*ms
+        diff_loss_o1 = relu_diff(o1,diff_loss_o2)                  # batch_size * middle_size
 
-        grad_w1 = np.dot(np.transpose(data),diff_o2_o1)
-        grad_b1 = add_diff(diff_o2_o1)
+        grad_w1 = np.dot(np.transpose(data),diff_loss_o1)          # input_size * middle_size
+        grad_b1 = add_diff(diff_loss_o1)                           # batch_size * middle_size
 
         #optimize
         weight2 += -lr*grad_w2
